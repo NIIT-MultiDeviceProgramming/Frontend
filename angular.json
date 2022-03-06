@@ -1,7 +1,9 @@
 {
-  "version": 2,
-  "projects": {
-    "shopp-e": "apps/shopp-e",
-    "shopp-e-e2e": "apps/shopp-e-e2e"
-  }
+    "version": 2,
+    "projects": {
+        "admin": "apps/admin",
+        "admin-e2e": "apps/admin-e2e",
+        "shopp-e": "apps/shopp-e",
+        "shopp-e-e2e": "apps/shopp-e-e2e"
+    }
 }
