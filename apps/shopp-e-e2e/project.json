@@ -1,0 +1,28 @@
+{
+  "root": "apps/shopp-e-e2e",
+  "sourceRoot": "apps/shopp-e-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/shopp-e-e2e/cypress.json",
+        "devServerTarget": "shopp-e:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "shopp-e:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/shopp-e-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["shopp-e"]
+}
