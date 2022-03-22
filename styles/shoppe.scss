@@ -2,8 +2,16 @@
 @import './base/colors.scss';
 @import './base/fonts.scss';
 @import './base/mixins.scss';
-@import './base/configuration.scss';
 
+
+
+//Libraries
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/saga-blue/theme.scss';
+@import '~primeng/resources/primeng.main.css';
+@import '~primeflex/primeflex.css';
+
+@import './base/configuration.scss';
 
 //Pages
 @import './apps/shop/pages/home-page.scss';
