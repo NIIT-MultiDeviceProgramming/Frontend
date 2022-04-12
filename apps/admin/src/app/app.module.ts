@@ -49,6 +49,10 @@ const routes: Routes = [
             {
                 path: 'categories/form',
                 component: CategoriesListComponent,
+            },
+            {
+                path: 'categories/form/:id',
+                component: CategoriesListComponent,
             }
         ]
     }

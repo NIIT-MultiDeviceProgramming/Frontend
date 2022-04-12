@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoriesService, Category } from '@shoppe/products';
 import { MessageService, ConfirmationService } from 'primeng/api';
 
@@ -14,7 +15,8 @@ export class CategoriesListComponent implements OnInit {
 
   constructor(private categoriesService: CategoriesService, 
     private messageService: MessageService, 
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -35,8 +37,11 @@ export class CategoriesListComponent implements OnInit {
           this.messageService.add({severity: 'error', summary: 'Error', detail: 'Category is not deleted!'});
         });
       },
-    });
-    
+    });  
+  }
+
+  updateCategory(categoryid: string) {
+    this.router.navigateByUrl(`categories/form/${categoryid}`)
   }
 
   private _getCategories() {
