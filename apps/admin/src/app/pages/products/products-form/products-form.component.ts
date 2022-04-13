@@ -43,7 +43,7 @@ export class ProductsFormComponent implements OnInit {
       countInStock: ['', Validators.required],
       description: ['', Validators.required],
       richDescription: [''],
-      image: [''],
+      image: ['', Validators.required],
       isFeatured: [false]
     });
   }
