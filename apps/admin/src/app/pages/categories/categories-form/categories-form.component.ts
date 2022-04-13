@@ -111,9 +111,9 @@ export class CategoriesFormComponent implements OnInit {
         this.editmode = true;
         this.currentCategoryId = params.id;
         this.categoriesService.getCategory(params.id).subscribe((category) => {
-          this.categoryForm.name.setValue(category.name);
-          this.categoryForm.icon.setValue(category.icon);
-          this.categoryForm.color.setValue(category.color);
+          this.categoryForm.name.setValue(Category.name);
+          // this.categoryForm.icon.setValue(category.icon);
+          // this.categoryForm.color.setValue(category.color);
         });
       }
     });
