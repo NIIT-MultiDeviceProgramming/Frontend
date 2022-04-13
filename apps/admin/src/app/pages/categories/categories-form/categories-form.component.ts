@@ -15,7 +15,7 @@ import { timer } from 'rxjs';
 export class CategoriesFormComponent implements OnInit {
 
   form: FormGroup;
-  isSubmitted: boolean = false;
+  isSubmitted= false;
   editmode = false;
   currentCategoryId : string;
 
@@ -29,7 +29,8 @@ export class CategoriesFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
-      icon: ['', Validators.required]
+      icon: ['', Validators.required],
+      color: ['#fff']
     });
 
     this._checkEditMode();
@@ -41,10 +42,11 @@ export class CategoriesFormComponent implements OnInit {
       return;
     }
 
-    const category : Category = {
+    const category: Category = {
       id: this.currentCategoryId,
       name: this.categoryForm.name.value,
-      icon: this.categoryForm.icon.value
+      icon: this.categoryForm.icon.value,
+      color: this.categoryForm.color.value
     };
     if(this.editmode) {
       this._updateCategory(category)
@@ -53,15 +55,19 @@ export class CategoriesFormComponent implements OnInit {
     }   
   }
 
+  onCancel() {
+    this.location.back();
+  }
+
   private _addCategory(category: Category) {
     this.categoriesService.createCategory(category).subscribe(
-      (response) => {
-        this.messageService.add({severity: 'success', summary: 'Success', detail: 'Category is created'});
-        timer(2000).toPromise().then(done => {
+      (category: Category) => {
+        this.messageService.add({severity: 'success', summary: 'Success', detail: `Category ${category.name} is created!`});
+        timer(2000).toPromise().then(() => {
           this.location.back();
         });
     },
-    (error) => {
+    () => {
       this.messageService.add({severity: 'error', summary: 'Error', detail: 'Category is not created'});
   },
   );
@@ -69,13 +75,13 @@ export class CategoriesFormComponent implements OnInit {
 
   private _updateCategory(category) {
     this.categoriesService.updateCategory(category).subscribe(
-      (response) => {
+      () => {
         this.messageService.add({severity: 'success', summary: 'Success', detail: 'Category is updated!'});
-        timer(2000).toPromise().then(done => {
+        timer(2000).toPromise().then(() => {
           this.location.back();
         });
     },
-    (error) => {
+    () => {
       this.messageService.add({severity: 'error', summary: 'Error', detail: 'Category is not updated!'});
   },
   );
@@ -86,9 +92,10 @@ export class CategoriesFormComponent implements OnInit {
       if (params.id) {
         this.editmode = true;
         this.currentCategoryId = params.id
-        this.categoriesService.getCategory(params.id).subscribe(category => {
+        this.categoriesService.getCategory(params.id).subscribe((category) => {
           this.categoryForm.name.setValue(category.name);
           this.categoryForm.icon.setValue(category.icon);
+          this.categoryForm.color.setValue(category.color);
         })
       }
     })

@@ -18,7 +18,8 @@
             "@shoppe/orders": ["libs/orders/src/index.ts"],
             "@shoppe/products": ["libs/products/src/index.ts"],
             "@shoppe/ui": ["libs/ui/src/index.ts"],
-            "@shoppe/users": ["libs/users/src/index.ts"]
+            "@shoppe/users": ["libs/users/src/index.ts"],
+            "@env/*" : ["environments/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]
