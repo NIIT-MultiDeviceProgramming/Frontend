@@ -8,8 +8,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ShellComponent } from './shared/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
+import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { ProductsListComponent } from './pages/products/products-list/products-list.component';
 import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
+import { UsersListComponent } from './pages/users/users-list/users-list.component';
+import { UsersFormComponent } from './pages/users/users-form/users-form.component';
 
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -17,7 +20,6 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesService } from '@shoppe/products';
-import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
@@ -28,7 +30,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputSwitchModule } from 'primeng/inputswitch';
-import { Editor, EditorModule } from 'primeng/editor'
+import { EditorModule } from 'primeng/editor';
+import { TagModule } from 'primeng/tag';
+import { InputMaskModule } from 'primeng/inputmask';
 
 
 const UX_MODULE = [
@@ -45,6 +49,8 @@ const UX_MODULE = [
     InputTextareaModule,
     InputSwitchModule,
     EditorModule,
+    TagModule,
+    InputMaskModule,
 ]
 
 
@@ -75,18 +81,30 @@ const routes: Routes = [
             },
             {
                 path: 'products/form',
-                component: ProductsListComponent,
+                component: ProductsFormComponent,
             },
             {
                 path: 'products/form/:id',
-                component: ProductsListComponent,
+                component: ProductsFormComponent,
+            },
+            {
+                path: 'users',
+                component: UsersListComponent,
+            },
+            {
+                path: 'users/form',
+                component: UsersFormComponent,
+            },
+            {
+                path: 'users/form/:id',
+                component: UsersFormComponent,
             }
         ]
     }
 ];
 
 @NgModule({
-    declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent, ProductsFormComponent],
+    declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent, ProductsFormComponent, UsersListComponent, UsersFormComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
