@@ -8,6 +8,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ShellComponent } from './shared/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
+import { ProductsListComponent } from './pages/products/products-list/products-list.component';
+import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
 
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -22,6 +24,12 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { Editor, EditorModule } from 'primeng/editor'
+
 
 const UX_MODULE = [
     CardModule,
@@ -32,6 +40,11 @@ const UX_MODULE = [
     ToastModule,
     ConfirmDialogModule,
     ColorPickerModule,
+    InputNumberModule,
+    DropdownModule,
+    InputTextareaModule,
+    InputSwitchModule,
+    EditorModule,
 ]
 
 
@@ -50,18 +63,30 @@ const routes: Routes = [
             },
             {
                 path: 'categories/form',
-                component: CategoriesListComponent,
+                component: CategoriesFormComponent,
             },
             {
                 path: 'categories/form/:id',
-                component: CategoriesListComponent,
+                component: CategoriesFormComponent,
+            },
+            {
+                path: 'products',
+                component: ProductsListComponent,
+            },
+            {
+                path: 'products/form',
+                component: ProductsListComponent,
+            },
+            {
+                path: 'products/form/:id',
+                component: ProductsListComponent,
             }
         ]
     }
 ];
 
 @NgModule({
-    declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent],
+    declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent, ProductsFormComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
