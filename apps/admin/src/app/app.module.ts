@@ -13,6 +13,8 @@ import { ProductsListComponent } from './pages/products/products-list/products-l
 import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { UsersFormComponent } from './pages/users/users-form/users-form.component';
+import { OrdersListComponent } from './pages/orders/orders-list/orders-list.component';
+import { OrdersDetailComponent } from './pages/orders/orders-detail/orders-detail.component';
 
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -33,6 +35,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { EditorModule } from 'primeng/editor';
 import { TagModule } from 'primeng/tag';
 import { InputMaskModule } from 'primeng/inputmask';
+import { FieldsetModule } from 'primeng/fieldset'
+
 
 
 const UX_MODULE = [
@@ -51,6 +55,7 @@ const UX_MODULE = [
     EditorModule,
     TagModule,
     InputMaskModule,
+    FieldsetModule,
 ]
 
 
@@ -98,13 +103,21 @@ const routes: Routes = [
             {
                 path: 'users/form/:id',
                 component: UsersFormComponent,
+            },
+            {
+                path: 'orders',
+                component: OrdersListComponent
+            },
+            {
+                path: 'orders/:id',
+                component: OrdersDetailComponent
             }
         ]
     }
 ];
 
 @NgModule({
-    declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent, ProductsFormComponent, UsersListComponent, UsersFormComponent],
+    declarations: [AppComponent, NxWelcomeComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent, ProductsListComponent, ProductsFormComponent, UsersListComponent, UsersFormComponent, OrdersListComponent, OrdersDetailComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
