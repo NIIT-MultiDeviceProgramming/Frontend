@@ -1,12 +1,12 @@
 <p-toast></p-toast>
 <div class="admin-page">
   <p-card header="Users" subheader="List of all users">
-    <div class="p-grid">
-      <div class="p-col-12">
+    <div class="grid">
+      <div class="col-12">
         <p-toolbar>
-          <div class="p-toolbar-group-left">
+          <div class="toolbar-group-left">
             <p-button
-              styleClass="p-button-success"
+              styleClass="button-success"
               label="New"
               icon="pi pi-plus"
               routerLink="form">
@@ -15,9 +15,9 @@
         </p-toolbar>
       </div>
     </div>
-    <div class="p-grid">
-      <div class="p-col-12">
-        <p-table [value]="users" styleClass="p-datatable-gridlines">
+    <div class="grid">
+      <div class="col-12">
+        <p-table [value]="users" styleClass="datatable-gridlines">
           <ng-template pTemplate="header">
             <tr>
               <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
@@ -49,12 +49,12 @@
               <td>
                 <p-button
                   (click)="deleteUser(user.id)"
-                  styleClass="p-button-danger p-mr-2"
+                  styleClass="button-danger mr-2"
                   icon="pi pi-trash">
                 </p-button>
                 <p-button
                   (click)="updateUser(user.id)"
-                  styleClass="p-button-success"
+                  styleClass="button-success"
                   icon="pi pi-pencil">
                 </p-button>
               </td>
