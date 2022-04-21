@@ -13,7 +13,7 @@
               (click)="onSubmit()">
             </p-button>
             <p-button
-              styleClass="button-secondary"
+              styleClass="p-button-secondary"
               label="Cancel"
               icon="pi pi-arrow-circle-left"
               (click)="onCancel()">
@@ -25,7 +25,7 @@
     <div class="grid">
       <div class="col-12">
         <form [formGroup]="form">
-          <div class="fluid formgrid grid">
+          <div class="p-fluid formgrid grid">
             <div class="field col-4">
               <label for="name">Name</label>
               <input formControlName="name" id="name" type="text" pInputText />
@@ -60,7 +60,7 @@
               <p-inputSwitch formControlName="isAdmin"></p-inputSwitch>
             </div>
           </div>
-          <div class="fluid formgrid grid">
+          <div class="p-fluid formgrid grid">
             <div class="field col-4">
               <label for="street">Street</label>
               <input formControlName="street" id="street" type="text" pInputText />

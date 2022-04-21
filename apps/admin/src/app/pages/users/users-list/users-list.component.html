@@ -6,7 +6,7 @@
         <p-toolbar>
           <div class="toolbar-group-left">
             <p-button
-              styleClass="button-success"
+              styleClass="p-button-success"
               label="New"
               icon="pi pi-plus"
               routerLink="form">
@@ -17,7 +17,7 @@
     </div>
     <div class="grid">
       <div class="col-12">
-        <p-table [value]="users" styleClass="datatable-gridlines">
+        <p-table [value]="users" styleClass="p-datatable-gridlines">
           <ng-template pTemplate="header">
             <tr>
               <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
@@ -49,12 +49,12 @@
               <td>
                 <p-button
                   (click)="deleteUser(user.id)"
-                  styleClass="button-danger mr-2"
+                  styleClass="p-button-danger mr-2"
                   icon="pi pi-trash">
                 </p-button>
                 <p-button
                   (click)="updateUser(user.id)"
-                  styleClass="button-success"
+                  styleClass="p-button-success"
                   icon="pi pi-pencil">
                 </p-button>
               </td>

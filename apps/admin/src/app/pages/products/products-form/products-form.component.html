@@ -15,7 +15,7 @@
               (click)="onSubmit()">
             </p-button>
             <p-button
-              styleClass="button-secondary"
+              styleClass="p-button-secondary"
               label="Cancel"
               icon="pi pi-arrow-circle-left"
               (click)="onCancel()"></p-button>
@@ -26,7 +26,7 @@
     <div class="grid">
       <div class="col-12">
         <form [formGroup]="form">
-          <div class="fluid formgrid grid">
+          <div class="p-fluid formgrid grid">
             <div class="field col">
               <label for="name">Name</label>
               <input formControlName="name" id="name" type="text" pInputText />
@@ -47,7 +47,7 @@
                   Price is required</small>
             </div>
           </div>
-          <div class="fluid formgrid grid">
+          <div class="p-fluid formgrid grid">
             <div class="field col-4">
               <label for="countInStock">countInStock</label><br />
               <p-inputNumber formControlName="countInStock" mode="decimal" [useGrouping]="false">
