@@ -15,6 +15,7 @@ import { UsersListComponent } from './pages/users/users-list/users-list.componen
 import { UsersFormComponent } from './pages/users/users-form/users-form.component';
 import { OrdersListComponent } from './pages/orders/orders-list/orders-list.component';
 import { OrdersDetailComponent } from './pages/orders/orders-detail/orders-detail.component';
+import { AuthGuard, UsersModule } from '@shoppe/users';
 
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -36,7 +37,6 @@ import { EditorModule } from 'primeng/editor';
 import { TagModule } from 'primeng/tag';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FieldsetModule } from 'primeng/fieldset'
-
 
 
 const UX_MODULE = [
@@ -63,6 +63,7 @@ const routes: Routes = [
     {
         path: '',
         component: ShellComponent,
+        canActivate: [AuthGuard],
         children : [
             {
                 path: 'dashboard',
@@ -124,7 +125,8 @@ const routes: Routes = [
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule.forRoot(routes, { initialNavigation: 'enabled' }), 
+        RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
+        UsersModule, 
         ...UX_MODULE],
     providers: [CategoriesService, MessageService, ConfirmationService],
     bootstrap: [AppComponent]
