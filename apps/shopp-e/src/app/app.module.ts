@@ -15,6 +15,8 @@ import { ProductsModule } from '@shoppe/products';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { OrdersModule } from '@shoppe/orders';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -32,9 +34,10 @@ const routes: Routes = [
     AccordionModule, 
     ProductsModule, 
     CommonModule,
-    OrdersModule
+    OrdersModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
