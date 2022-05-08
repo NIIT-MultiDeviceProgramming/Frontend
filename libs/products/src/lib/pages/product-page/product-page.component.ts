@@ -11,7 +11,7 @@ import { ProductsService } from '../../services/products.service';
   ]
 })
 export class ProductPageComponent implements OnInit, OnDestroy {
-  product!: Product;
+  product: Product = new Product;
   //product: Product = new Product;
   endSubs$: Subject<any> = new Subject();
   quantity?: number;
@@ -19,15 +19,25 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   constructor(private prodService: ProductsService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    
     this.route.params.subscribe((params) => {
-      console.log(this.product.name);
-      console.log(params['productid']);
-      if (params['productid']) {
-        this._getProduct(params['productid']);
-        console.log(this.product.id);
+      console.log(params);
+      //console.log(this.product.name);
+      //console.log(params['productsid']);
+      if (params['productsid']) {
+        this._getProduct(params['productsid']);
+        console.log(params['productsid']);
       }
     });
   }
+
+  // ngOnInit(): void {
+  //   this.route.params.subscribe((params) => {
+  //     if (params.productid) {
+  //       this._getProduct(params.productid);
+  //     }
+  //   });
+  // }
 
   ngOnDestroy(): void {
     this.endSubs$.next(void 0);

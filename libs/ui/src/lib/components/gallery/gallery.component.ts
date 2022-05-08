@@ -7,10 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
   ]
 })
 export class GalleryComponent implements OnInit {
-  selectedImageUrl!: string;
+  selectedImageUrl: string;
 
   @Input()
-  images: string[] = [];
+  images: string[];
   
 
   ngOnInit(): void {

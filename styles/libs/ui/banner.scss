@@ -7,6 +7,7 @@
     &-text {
         color: var(--surface-700);
         margin-top: 50px;
+        padding: 20px 30px;
 
 
         h1 {
@@ -19,6 +20,7 @@
             margin: 0;
             font-size: 2em;
             font-weight: 300;
+            padding-bottom: 30px;
         }
     }
 
@@ -42,7 +44,7 @@
         height: 50px;
 
 
-        &:enabled:hover {
+        &:hover {
             background-color: var(--surface-0);
             color: $primary-color;
             border: 0;

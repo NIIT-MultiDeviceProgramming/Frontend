@@ -14,6 +14,7 @@ import { NavComponent } from './shared/nav/nav.component';
 import { ProductsModule } from '@shoppe/products';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { OrdersModule } from '@shoppe/orders';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -22,7 +23,17 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), HttpClientModule, UiModule, AccordionModule, ProductsModule, CommonModule],
+  imports: [
+    BrowserModule, 
+    BrowserAnimationsModule, 
+    RouterModule.forRoot(routes), 
+    HttpClientModule, 
+    UiModule, 
+    AccordionModule, 
+    ProductsModule, 
+    CommonModule,
+    OrdersModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
