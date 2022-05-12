@@ -27,7 +27,8 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
   checkoutFormGroup!: FormGroup;
   isSubmitted = false;
   orderItems: OrderItem[] = [];
-  userId?: User;
+  userId?: string;
+  User?: User;
   countries = [];
   unsubscribe$: Subject<any> = new Subject();
 
@@ -62,7 +63,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((user) => {
         if (user) {
-          this.userId = user;
+          this.userId = user.id;
           this.checkoutForm['name'].setValue(user.name);
           this.checkoutForm['email'].setValue(user.email);
           this.checkoutForm['phone'].setValue(user.phone);
@@ -108,7 +109,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
       country: this.checkoutForm['country'].value,
       phone: this.checkoutForm['phone'].value,
       status: 0,
-      user: this.userId,
+      user: this.User,
       dateOrdered: `${Date.now()}`
     };
 
