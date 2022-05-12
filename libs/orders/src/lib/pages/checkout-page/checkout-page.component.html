@@ -9,7 +9,7 @@
             <div class="field col-4">
               <label for="name">Name</label>
               <input formControlName="name" id="name" type="text" pInputText />
-              <small *ngIf="checkoutForm.name.invalid && isSubmitted" class="p-error"
+              <small *ngIf="checkoutForm['name'].invalid && isSubmitted" class="p-error"
                 >Name is required</small
               >
             </div>

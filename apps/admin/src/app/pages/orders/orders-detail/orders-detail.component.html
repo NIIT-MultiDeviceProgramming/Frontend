@@ -26,7 +26,7 @@
 
         <div class="col-4">
           <h5>Order Total Price</h5>
-          <p>{{ order.totalPrice | currency }}</p>
+          <p>{{ order.totalPrice | currency:"INR" }}</p>
         </div>
       </div>
     </p-fieldset>
@@ -43,14 +43,14 @@
         <div class="col-2">{{ orderItem.product.name }}</div>
         <div class="col-2">{{ orderItem.product.brand }}</div>
         <div class="col-2">{{ orderItem.product.category.name }}</div>
-        <div class="col-2">{{ orderItem.product.price | currency }}</div>
+        <div class="col-2">{{ orderItem.product.price | currency:"INR" }}</div>
         <div class="col-2">{{ orderItem.quantity }}</div>
-        <div class="col-2">{{ orderItem.product.price * orderItem.quantity | currency }}</div>
+        <div class="col-2">{{ orderItem.product.price * orderItem.quantity | currency:"INR" }}</div>
       </div>
       <div class="grid" style="color: green">
         <div class="col-2 offset-8 text-bold">Total Price</div>
 
-        <div class="col-2 text-bold">{{ order.totalPrice | currency }}</div>
+        <div class="col-2 text-bold">{{ order.totalPrice | currency:"INR" }}</div>
       </div>
     </p-fieldset>
     <p-fieldset legend="Order Address" styleClass="mb-4" [toggleable]="true">

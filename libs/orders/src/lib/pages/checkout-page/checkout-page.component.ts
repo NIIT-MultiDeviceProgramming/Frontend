@@ -24,10 +24,10 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     private cartService: CartService,
     private ordersService: OrdersService
   ) {}
-  checkoutFormGroup: FormGroup;
+  checkoutFormGroup!: FormGroup;
   isSubmitted = false;
   orderItems: OrderItem[] = [];
-  userId?: string;
+  userId?: User;
   countries = [];
   unsubscribe$: Subject<any> = new Subject();
 
@@ -62,7 +62,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((user) => {
         if (user) {
-          this.userId = user.id;
+          this.userId = user;
           this.checkoutForm['name'].setValue(user.name);
           this.checkoutForm['email'].setValue(user.email);
           this.checkoutForm['phone'].setValue(user.phone);
