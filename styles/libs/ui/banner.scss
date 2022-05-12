@@ -1,26 +1,32 @@
 .banner {
-    height: 280px;
+    height: 300px;
     width: 100%;
-    background-color: #d7effb;
+    background-image: url('C:/Users/Hp/Desktop/Capstone/Frontend/apps/shopp-e/src/assets/images/banner.png');
     border-radius: 15px;
 
     &-text {
-        color: var(--surface-700);
+        color: white;
         margin-top: 50px;
         padding: 20px 30px;
+        text-align: center;
 
 
         h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 400;
+            padding-top: 155px;
+            padding-left: 30px;
+            
         }
 
         h2 {
             margin: 0;
-            font-size: 2em;
+            font-size: 1em;
             font-weight: 300;
-            padding-bottom: 30px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            
         }
     }
 
@@ -36,12 +42,12 @@
     }
 
 
-    &-button {
+    .p-button {
         background-color: var(--surface-0);
         color: $primary-color;
         border: 0;
         border-radius: 13px;
-        height: 50px;
+        height: 40px;
 
 
         &:hover {
