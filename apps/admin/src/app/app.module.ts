@@ -36,6 +36,7 @@ import { OrdersListComponent } from './pages/orders/orders-list/orders-list.comp
 import { OrdersDetailComponent } from './pages/orders/orders-detail/orders-detail.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxStripeModule } from 'ngx-stripe';
 
 const UX_MODULE = [
   CardModule,
@@ -79,6 +80,7 @@ const UX_MODULE = [
     FormsModule,
     ReactiveFormsModule,
     UsersModule,
+    NgxStripeModule.forRoot('pk_test_51KxHonSAGofgKTlmt9UCDEUhtHqk4r9eHWEjoAH8g9QDusJcpmFB1CxkX53JptAcg2uKP6uo9fbl4Jkct5vOlewV00hOY8vyj7'),
     ...UX_MODULE
   ],
   providers: [
