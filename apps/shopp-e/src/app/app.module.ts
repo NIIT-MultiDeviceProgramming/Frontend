@@ -20,6 +20,7 @@ import { MessageService } from 'primeng/api';
 import { UsersModule } from '@shoppe/users';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { NgxStripeModule } from 'ngx-stripe';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -41,7 +42,8 @@ const routes: Routes = [
     ToastModule,
     UsersModule,
     StoreModule.forRoot({}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    NgxStripeModule.forRoot('pk_test_51KxHonSAGofgKTlmt9UCDEUhtHqk4r9eHWEjoAH8g9QDusJcpmFB1CxkX53JptAcg2uKP6uo9fbl4Jkct5vOlewV00hOY8vyj7')
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
