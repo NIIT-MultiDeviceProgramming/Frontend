@@ -2,10 +2,11 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
 
 describe('AppComponent', () => {
     beforeEach(async () => {
-        await TestBed.configureTestingModule({ imports: [RouterTestingModule], declarations: [AppComponent, NxWelcomeComponent] }).compileComponents();
+        await TestBed.configureTestingModule({ imports: [RouterTestingModule, StoreModule.forRoot({})], declarations: [AppComponent, NxWelcomeComponent] }).compileComponents();
     });
 
     it('should create the app', () => {

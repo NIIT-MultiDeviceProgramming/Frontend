@@ -37,6 +37,7 @@ import { OrdersDetailComponent } from './pages/orders/orders-detail/orders-detai
 import { FieldsetModule } from 'primeng/fieldset';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxStripeModule } from 'ngx-stripe';
+import { StoreFeatureModule } from '@ngrx/store';
 
 const UX_MODULE = [
   CardModule,
